@@ -1,0 +1,37 @@
+{
+  "name": "sim",
+  "version": "1.0.0",
+  "description": "A simulator system built with React",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "react-dev": "echo TBD",
+    "start": "nodemon --inspect ./server/server.js",
+    "build": "echo TBD",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avincenthill/sim.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avincenthill/sim/issues"
+  },
+  "homepage": "https://github.com/avincenthill/sim#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "jest": "^23.5.0",
+    "jquery": "^3.3.1",
+    "math.js": "^1.1.43",
+    "mongoose": "^5.2.12",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.4",
+    "react": "^16.4.2",
+    "test": "^0.6.0"
+  }
+}
