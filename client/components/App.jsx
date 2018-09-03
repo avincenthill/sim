@@ -1,29 +1,34 @@
 import React from 'react';
+import Cell from './Cell.jsx';
+import Console from './Console.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.n = 100;
-    const row = new Array(this.n).fill(0);
-    const sim = new Array(this.n).fill(row);
+
+    // TBD refactor with redux and drawBoard method from store data
+    this.rows = 25;
+    this.columns = 40;
+    this.row = new Array(this.columns).fill(0);
+    this.sim = new Array(this.rows).fill(this.row);
     this.state = {
-      sim: sim,
+      sim: this.sim,
     }
   }
+
   render() {
     let sim = this.state.sim;
     return (
       <React.Fragment>
-        <h1>Hello World!</h1>
-        <div className='board'>
+        <div className='Board'>
           {sim.map((row, i) => {
             return row.map((cell, j) => {
-              return <div className='cell'>0</div>
+              return <Cell text={`${i},${j}`} row={i} col={j} />
             })
           })
           }
         </div>
-        <h2>Goodbye</h2>
+        <Console />
       </React.Fragment>
     )
   }

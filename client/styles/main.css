@@ -1,6 +1,24 @@
-.board {
-  display: grid;
-  grid-template-columns: repeat(100, 1fr);
-  justify-content: center;
+body {
   text-align: center;
+  background-color: black;
+  color: white;
+  padding: 10vmin;
+}
+
+.Board {
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  /* TBD fix hardcoded dims */
+  padding: 2vmin;
+}
+
+.Cell {
+  border: 5vmin;
+  border-color: red;
+  font-size: 1.25vmin;
+  min-height: 2vmin;
+  min-width: 2vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
