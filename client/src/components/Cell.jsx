@@ -1,4 +1,5 @@
 import React from 'react';
+import { Collection } from 'mongoose';
 
 class Cell extends React.Component {
   constructor(props) {
@@ -7,8 +8,8 @@ class Cell extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className='Cell'>{this.props.text}</div>
-      </React.Fragment>
+        <div onClick={() => this.props.handleCellClick(this.props.text)} className='Cell' >{this.props.text}</div>
+      </React.Fragment >
     )
   }
 }

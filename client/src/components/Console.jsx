@@ -7,7 +7,7 @@ class Console extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className='Console'>Welcome to sim!</div>
+        <div className='Console'>{this.props.readout}</div>
       </React.Fragment>
     )
   }

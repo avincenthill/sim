@@ -7,28 +7,36 @@ class App extends React.Component {
     super(props);
 
     // TBD refactor with redux and drawBoard method from store data
-    this.rows = 25;
-    this.columns = 40;
+    this.rows = 13;
+    this.columns = 20;
     this.row = new Array(this.columns).fill(0);
     this.sim = new Array(this.rows).fill(this.row);
     this.state = {
       sim: this.sim,
+      readout: 'welcome to sim',
     }
   }
 
+  handleCellClick(data) {
+    this.writeToConsole(data);
+  }
+
+  writeToConsole(data) {
+    this.setState({ readout: data });
+  }
+
   render() {
-    let sim = this.state.sim;
+    let state = this.state;
     return (
       <React.Fragment>
         <div className='Board'>
-          {sim.map((row, i) => {
+          {state.sim.map((row, i) => {
             return row.map((cell, j) => {
-              return <Cell text={`${i},${j}`} row={i} col={j} />
+              return <Cell handleCellClick={this.handleCellClick.bind(this)} text={`${i},${j}`} row={i} col={j} />
             })
-          })
-          }
+          })}
         </div>
-        <Console />
+        <Console readout={state.readout} />
       </React.Fragment>
     )
   }
